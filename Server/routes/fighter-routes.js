@@ -7,7 +7,7 @@ const { requireToken } = require('../config/auth')
 
 //INDEX
 // GET /fighters
-router.get('/fighters', (req, res, next) => {
+router.get('/fighters', requireToken, (req, res, next) => {
     Fighter.find()
         .then(fighters => {
             return fighters.map(fighter => fighter)
@@ -20,7 +20,7 @@ router.get('/fighters', (req, res, next) => {
 
 // SHOW
 // GET /fighters/:id
-router.get('/fighters/:id', (req, res, next) => {
+router.get('/fighters/:id', requireToken, (req, res, next) => {
     Fighter.findById(req.params.id)
         .then(handle404)
         .then(fighter => {
@@ -31,7 +31,7 @@ router.get('/fighters/:id', (req, res, next) => {
 
 // CREATE
 // POST /fighters
-router.post('/fighters', (req, res, next) => {
+router.post('/fighters', requireToken, (req, res, next) => {
     // req.body
     // fighter: {}
     Fighter.create(req.body.fighter)
@@ -44,7 +44,7 @@ router.post('/fighters', (req, res, next) => {
 
 // UPDATE
 // PATCH /fighter/:id
-router.patch('/fighters/:id', (req, res, next) => {
+router.patch('/fighters/:id', requireToken, (req, res, next) => {
     Fighter.findById(req.params.id)
         .then(handle404)
         .then(fighter => {
@@ -57,7 +57,7 @@ router.patch('/fighters/:id', (req, res, next) => {
 
 // DELETE
 // DELETE /fighters/:id
-router.delete('/fighters/:id', (req, res, next) => {
+router.delete('/fighters/:id', requireToken, (req, res, next) => {
     Fighter.findById(req.params.id)
         .then(handle404)
         .then(fighter => {
