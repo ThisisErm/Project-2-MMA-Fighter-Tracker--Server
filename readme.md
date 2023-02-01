@@ -3,9 +3,8 @@ MMA Fighter Tracker APP: A simple crud app to track MMA fighters' and their prof
 Users can add new fighters, as well access, edit, and delete existing fighters. USers also have the option to add skills to existing fighters to match their professional record. 
 _________________________________________________________________
 ## Technologies used:
-* Javascript
-* HTML
-* CSS
+* Express.JS
+* Node.js
 * MongoDB
 _________________________________________________________________
 ## Entity Relationship Diagram:
