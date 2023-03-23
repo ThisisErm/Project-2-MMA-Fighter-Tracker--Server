@@ -24,7 +24,7 @@ mongoose.connect(db, {
 // starting an express app
 const app = express()
 
-app.use(cors({ origin: `https://thisiserm.github.io/CageWatch` }))
+app.use(cors({ origin: `https://thisiserm.github.io` }))
 
 // sending json 
 // need to be able to accept json
