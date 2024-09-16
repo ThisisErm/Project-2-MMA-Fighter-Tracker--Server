@@ -23,7 +23,7 @@ router.post('/sign-up', (req, res, next) => {
         })
         .catch(next)
 })
-
+// Formatting here got a bit odd
 //POST /sign-in
 router.post('/sign-in', (req, res, next) => {
 User.findOne({ email: req.body.credentials.email })
@@ -33,4 +33,3 @@ User.findOne({ email: req.body.credentials.email })
 })
 
 module.exports = router
-

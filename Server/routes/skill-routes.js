@@ -2,8 +2,10 @@ const express = require('express')
 const Fighter = require('../models/fighter')
 const { handle404 } = require('../lib/custom-errors')
 const router = express.Router()
+// remove unused `requireToken`
 const { requireToken } = require('../config/auth')
 
+// Great use of an extra index here!
 //GET/Index
 router.get('/skills', (req, res) => {
     Fighter.find({})
@@ -16,12 +18,12 @@ router.get('/skills', (req, res) => {
         })
 })
 
-
 // CREATE
 // POST /skills
 router.post('/skills', (req, res, next) => {
     const fighterId = req.body.skill.fighterId
 
+    // removed unused `skill` variable
     const skill = req.body.skill
 
     //adding owner
